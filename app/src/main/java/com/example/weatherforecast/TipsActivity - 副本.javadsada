@@ -1,0 +1,50 @@
+package com.example.weatherforecast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+import com.example.weatherforecast.Bean.DayWeatherBean;
+import com.example.weatherforecast.adapter.TipsAdapter;
+
+public class TipsActivity extends AppCompatActivity {
+
+    private RecyclerView rlvTips;
+    private TipsAdapter mTipsAdapter;
+    private TextView tvWeatherSummary;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tips);
+
+        rlvTips = findViewById(R.id.rlv_tips);
+        tvWeatherSummary = findViewById(R.id.tv_weather_summary);
+
+        Intent intent = getIntent();
+        DayWeatherBean weatherBean = (DayWeatherBean) intent.getSerializableExtra("tips");
+        if (weatherBean == null) {
+            tvWeatherSummary.setText("没有可用的天气数据");
+            return;
+        }
+
+        // 显示天气概要信息
+        tvWeatherSummary.setText("今天天气：" + weatherBean.getWea() + "，温度：" + weatherBean.getTem());
+
+        mTipsAdapter = new TipsAdapter(this, weatherBean.getTipsBean());
+        rlvTips.setAdapter(mTipsAdapter);
+        rlvTips.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void onBackToMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+}
