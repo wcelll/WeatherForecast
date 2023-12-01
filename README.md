@@ -1,9 +1,6 @@
+# WeatherForecast
 
-
-# ProjectName
-
-ProjectName and Description
-
+天气预报Android应用 - 实时天气信息和未来预报
 <!-- PROJECT SHIELDS -->
 
 [![Contributors][contributors-shield]][contributors-url]
