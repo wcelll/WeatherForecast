@@ -22,7 +22,7 @@ Android Studio
 Android SDK——————API 34
 Java Development Kit (JDK) jbr 17.0.6
 安装步骤
-克隆仓库到本地：git clone https://github.com/[您的用户名]/WeatherForecast.git
+克隆仓库到本地：git clone https://github.com/wcelll/WeatherForecast.git
 使用Android Studio打开项目。
 等待Android Studio安装所有必需的依赖项和工具。
 连接Android设备或使用模拟器。
