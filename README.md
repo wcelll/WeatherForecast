@@ -17,7 +17,7 @@
   <a href="https://github.com/wcelll/WeatherForecast">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
-  <h3 align="center">"完美的"README模板</h3>
+  <h3 align="center">"智能天气预报App</h3>
   <p align="center">
      Android应用，提供实时天气信息和未来几天的天气预报。
     <br />
